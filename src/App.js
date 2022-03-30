@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import "./styles.css";
 
 function App() {
   return (
@@ -22,4 +24,14 @@ function App() {
   );
 }
 
-export default App;
+export default function App() {
+  const client_id = process.env.REACT_APP_CLIENT_ID;
+  const api_key = process.env.REACT_APP_API_KEY;
+
+  return (
+    <div className="App">
+      <p>Client ID: {client_id}</p>
+      <p>API KEY: {api_key}</p>
+    </div>
+  );
+}
