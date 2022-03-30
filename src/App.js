@@ -27,11 +27,13 @@ import "./styles.css";
 export default function App() {
   const client_id = process.env.REACT_APP_CLIENT_ID;
   const api_key = process.env.REACT_APP_API_KEY;
-
+  console.log('env variables', process.env);
   return (
     <div className="App">
+
       <p>Client ID: {client_id}</p>
       <p>API KEY: {api_key}</p>
+
     </div>
   );
 }
