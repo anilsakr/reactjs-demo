@@ -16,6 +16,8 @@ steps:
 
 - script: |
     rm -rf node_modules
+    npm update
+    npm i jest-worker
     npm install
     npm run build
   displayName: 'npm install and build'
