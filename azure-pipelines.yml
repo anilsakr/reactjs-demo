@@ -37,15 +37,15 @@ steps:
 #     outputStorageUri: 'blobStorageUri'
 #   displayName: 'Copy files to Azure Blob storage'
 
-# - task: AzureCLI@2
-#   inputs:
-#     azureSubscription: 'newserviece'
-#     scriptType: 'bash'
-#     scriptLocation: 'inlineScript'
-#     inlineScript: |
-#       az storage blob service-properties update --account-name <YOUR_STORAGE_ACCOUNT_NAME> --static-website --404-document 404.html --index-document index.html
-#     failOnStandardError: true
-#   displayName: 'Configure static website'
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'newserviece'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az storage blob service-properties update --account-name sampleazurestatichost --static-website --404-document 404.html --index-document index.html
+    failOnStandardError: true
+  displayName: 'Configure static website'
 
 - task: AzureCLI@2
   inputs:
