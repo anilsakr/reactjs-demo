@@ -19,15 +19,24 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
-- task: AzureBlobFileCopy@4
+- task: AzureFileCopy@5
   inputs:
     SourcePath: '$(Build.SourcesDirectory)/build'
-    azureSubscription: '0c4bb8f8-40ca-43b1-b3a9-a059d5fc794f'
-    DestinationContainerName: '$web'
-    storage: 'sampleazurestatichost.blob.core.windows.net'
+    azureSubscription: 'Pay-As-You-Go (0c4bb8f8-40ca-43b1-b3a9-a059d5fc794f)'
+    Destination: 'AzureBlob'
+    storage: 'sampleazurestatichost'
+    ContainerName: '$web'
     BlobPrefix: '$(Build.BuildId)/'
-    outputStorageUri: 'blobStorageUri'
-  displayName: 'Copy files to Azure Blob storage'
+
+# - task: AzureBlobFileCopy@4
+#   inputs:
+#     SourcePath: '$(Build.SourcesDirectory)/build'
+#     azureSubscription: '0c4bb8f8-40ca-43b1-b3a9-a059d5fc794f'
+#     DestinationContainerName: '$web'
+#     storage: 'sampleazurestatichost.blob.core.windows.net'
+#     BlobPrefix: '$(Build.BuildId)/'
+#     outputStorageUri: 'blobStorageUri'
+#   displayName: 'Copy files to Azure Blob storage'
 
 - task: AzureCLI@2
   inputs:
