@@ -22,7 +22,7 @@ steps:
 - task: AzureFileCopy@5
   inputs:
     SourcePath: '$(Build.SourcesDirectory)/build'
-    azureSubscription: '0c4bb8f8-40ca-43b1-b3a9-a059d5fc794f'
+    azureSubscription: 'newserviece'
     Destination: 'AzureBlob'
     storage: 'sampleazurestatichost'
     ContainerName: '$web'
