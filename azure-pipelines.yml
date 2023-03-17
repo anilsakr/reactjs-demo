@@ -22,12 +22,11 @@ steps:
 - task: AzureFileCopy@5
   inputs:
     SourcePath: '$(Build.SourcesDirectory)/build'
-    azureSubscription: 'Pay-As-You-Go (0c4bb8f8-40ca-43b1-b3a9-a059d5fc794f)'
+    azureSubscription: 'newserviece'
     Destination: 'AzureBlob'
     storage: 'sampleazurestatichost'
     ContainerName: '$web'
     BlobPrefix: '$(Build.BuildId)/'
-
 # - task: AzureBlobFileCopy@4
 #   inputs:
 #     SourcePath: '$(Build.SourcesDirectory)/build'
